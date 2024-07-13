@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A271DA42C426027006D172A /* coboApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A271DA32C426027006D172A /* coboApp.swift */; };
+		9A271DA62C426027006D172A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A271DA52C426027006D172A /* ContentView.swift */; };
+		9A271DA82C426037006D172A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A271DA72C426037006D172A /* Assets.xcassets */; };
+		9A271DAC2C426037006D172A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A271DAB2C426037006D172A /* Preview Assets.xcassets */; };
+		9A271DB62C426037006D172A /* coboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A271DB52C426037006D172A /* coboTests.swift */; };
+		9A271DC02C426037006D172A /* coboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A271DBF2C426037006D172A /* coboUITests.swift */; };
+		9A271DC22C426037006D172A /* coboUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A271DC12C426037006D172A /* coboUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A271DB22C426037006D172A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A271D982C426027006D172A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A271D9F2C426027006D172A;
+			remoteInfo = cobo;
+		};
+		9A271DBC2C426037006D172A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A271D982C426027006D172A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A271D9F2C426027006D172A;
+			remoteInfo = cobo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9A271DA02C426027006D172A /* cobo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cobo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A271DA32C426027006D172A /* coboApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coboApp.swift; sourceTree = "<group>"; };
+		9A271DA52C426027006D172A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9A271DA72C426037006D172A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A271DA92C426037006D172A /* cobo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cobo.entitlements; sourceTree = "<group>"; };
+		9A271DAB2C426037006D172A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9A271DB12C426037006D172A /* coboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A271DB52C426037006D172A /* coboTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coboTests.swift; sourceTree = "<group>"; };
+		9A271DBB2C426037006D172A /* coboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A271DBF2C426037006D172A /* coboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coboUITests.swift; sourceTree = "<group>"; };
+		9A271DC12C426037006D172A /* coboUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coboUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A271D9D2C426027006D172A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A271DAE2C426037006D172A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A271DB82C426037006D172A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A271D972C426027006D172A = {
+			isa = PBXGroup;
+			children = (
+				9A271DA22C426027006D172A /* cobo */,
+				9A271DB42C426037006D172A /* coboTests */,
+				9A271DBE2C426037006D172A /* coboUITests */,
+				9A271DA12C426027006D172A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A271DA12C426027006D172A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A271DA02C426027006D172A /* cobo.app */,
+				9A271DB12C426037006D172A /* coboTests.xctest */,
+				9A271DBB2C426037006D172A /* coboUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A271DA22C426027006D172A /* cobo */ = {
+			isa = PBXGroup;
+			children = (
+				9A271DA32C426027006D172A /* coboApp.swift */,
+				9A271DA52C426027006D172A /* ContentView.swift */,
+				9A271DA72C426037006D172A /* Assets.xcassets */,
+				9A271DA92C426037006D172A /* cobo.entitlements */,
+				9A271DAA2C426037006D172A /* Preview Content */,
+			);
+			path = cobo;
+			sourceTree = "<group>";
+		};
+		9A271DAA2C426037006D172A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9A271DAB2C426037006D172A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9A271DB42C426037006D172A /* coboTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A271DB52C426037006D172A /* coboTests.swift */,
+			);
+			path = coboTests;
+			sourceTree = "<group>";
+		};
+		9A271DBE2C426037006D172A /* coboUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9A271DBF2C426037006D172A /* coboUITests.swift */,
+				9A271DC12C426037006D172A /* coboUITestsLaunchTests.swift */,
+			);
+			path = coboUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A271D9F2C426027006D172A /* cobo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A271DC52C426037006D172A /* Build configuration list for PBXNativeTarget "cobo" */;
+			buildPhases = (
+				9A271D9C2C426027006D172A /* Sources */,
+				9A271D9D2C426027006D172A /* Frameworks */,
+				9A271D9E2C426027006D172A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = cobo;
+			productName = cobo;
+			productReference = 9A271DA02C426027006D172A /* cobo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9A271DB02C426037006D172A /* coboTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A271DC82C426037006D172A /* Build configuration list for PBXNativeTarget "coboTests" */;
+			buildPhases = (
+				9A271DAD2C426037006D172A /* Sources */,
+				9A271DAE2C426037006D172A /* Frameworks */,
+				9A271DAF2C426037006D172A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A271DB32C426037006D172A /* PBXTargetDependency */,
+			);
+			name = coboTests;
+			productName = coboTests;
+			productReference = 9A271DB12C426037006D172A /* coboTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9A271DBA2C426037006D172A /* coboUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A271DCB2C426037006D172A /* Build configuration list for PBXNativeTarget "coboUITests" */;
+			buildPhases = (
+				9A271DB72C426037006D172A /* Sources */,
+				9A271DB82C426037006D172A /* Frameworks */,
+				9A271DB92C426037006D172A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A271DBD2C426037006D172A /* PBXTargetDependency */,
+			);
+			name = coboUITests;
+			productName = coboUITests;
+			productReference = 9A271DBB2C426037006D172A /* coboUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A271D982C426027006D172A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					9A271D9F2C426027006D172A = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					9A271DB02C426037006D172A = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 9A271D9F2C426027006D172A;
+					};
+					9A271DBA2C426037006D172A = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 9A271D9F2C426027006D172A;
+					};
+				};
+			};
+			buildConfigurationList = 9A271D9B2C426027006D172A /* Build configuration list for PBXProject "cobo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A271D972C426027006D172A;
+			productRefGroup = 9A271DA12C426027006D172A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A271D9F2C426027006D172A /* cobo */,
+				9A271DB02C426037006D172A /* coboTests */,
+				9A271DBA2C426037006D172A /* coboUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A271D9E2C426027006D172A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A271DAC2C426037006D172A /* Preview Assets.xcassets in Resources */,
+				9A271DA82C426037006D172A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A271DAF2C426037006D172A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A271DB92C426037006D172A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A271D9C2C426027006D172A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A271DA62C426027006D172A /* ContentView.swift in Sources */,
+				9A271DA42C426027006D172A /* coboApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A271DAD2C426037006D172A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A271DB62C426037006D172A /* coboTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A271DB72C426037006D172A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A271DC02C426037006D172A /* coboUITests.swift in Sources */,
+				9A271DC22C426037006D172A /* coboUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A271DB32C426037006D172A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A271D9F2C426027006D172A /* cobo */;
+			targetProxy = 9A271DB22C426037006D172A /* PBXContainerItemProxy */;
+		};
+		9A271DBD2C426037006D172A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A271D9F2C426027006D172A /* cobo */;
+			targetProxy = 9A271DBC2C426037006D172A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9A271DC32C426037006D172A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9A271DC42C426037006D172A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		9A271DC62C426037006D172A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = cobo/cobo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"cobo/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hugodelahousse.cobo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9A271DC72C426037006D172A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = cobo/cobo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"cobo/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hugodelahousse.cobo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9A271DC92C426037006D172A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hugodelahousse.coboTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cobo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cobo";
+			};
+			name = Debug;
+		};
+		9A271DCA2C426037006D172A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hugodelahousse.coboTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cobo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cobo";
+			};
+			name = Release;
+		};
+		9A271DCC2C426037006D172A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hugodelahousse.coboUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = cobo;
+			};
+			name = Debug;
+		};
+		9A271DCD2C426037006D172A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hugodelahousse.coboUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = cobo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A271D9B2C426027006D172A /* Build configuration list for PBXProject "cobo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A271DC32C426037006D172A /* Debug */,
+				9A271DC42C426037006D172A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A271DC52C426037006D172A /* Build configuration list for PBXNativeTarget "cobo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A271DC62C426037006D172A /* Debug */,
+				9A271DC72C426037006D172A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A271DC82C426037006D172A /* Build configuration list for PBXNativeTarget "coboTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A271DC92C426037006D172A /* Debug */,
+				9A271DCA2C426037006D172A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A271DCB2C426037006D172A /* Build configuration list for PBXNativeTarget "coboUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A271DCC2C426037006D172A /* Debug */,
+				9A271DCD2C426037006D172A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A271D982C426027006D172A /* Project object */;
+}
