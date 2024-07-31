@@ -9,16 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            GamesView().toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    NavigationLink {
+                        PlayerList()
+                    } label: {
+                        Image(systemName: "person.2.circle")
+                    }
+                }
+            }
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView().coboDataContainer()
 }

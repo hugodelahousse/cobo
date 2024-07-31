@@ -11,7 +11,7 @@ import SwiftUI
 struct coboApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().coboDataContainer(inMemory: false)
         }
     }
 }

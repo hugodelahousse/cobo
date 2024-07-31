@@ -5,35 +5,45 @@
 //  Created by Hugo Delahousse on 13/07/2024.
 //
 
+import SwiftData
 import SwiftUI
-import Fakery
 
 enum Destination {
     case createGame
 }
 
 struct GamesView: View {
-    @State private var path: [Destination] = []
+    @Environment(\.modelContext) var modelContext
+    @State private var path: [String] = []
+    @Query(sort: [SortDescriptor(\Game.date, order: .reverse)]) var games: [Game]
 
-    let games: [Game]
-    
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack {
             List {
                 ForEach(games) { game in
-                    NavigationLink {
-                        GameDetailView(game: game)
-                    } label: {
-                        GameCardView(game: game)
+                    Section {
+                        NavigationLink {
+                            GameDetailView(game: game)
+                        } label: {
+                            GameCardView(game: game)
+                        }.swipeActions(edge: .trailing) {
+                            Button("Delete", systemImage: "trash", role: .destructive) {
+                                modelContext.delete(game)
+                                
+                            }
+                        }
+                    } header: {
+                        Text("\(game.date.formatted(date: .long, time: .omitted))")
                     }
                 }
             }.toolbar {
-                ToolbarItem {
-                    NavigationLink("\(Image(systemName: "plus"))", value: Destination.createGame)
+                ToolbarItem(placement: .primaryAction) {
+                    NavigationLink {
+                        GameEditor()
+                    } label: {
+                        Image(systemName: "plus")
+                    }
                 }
-            }
-            .navigationDestination(for: Destination.self) { destination in
-                Text("Hello, world")
             }
             .navigationTitle("Games")
         }
@@ -41,5 +51,5 @@ struct GamesView: View {
 }
 
 #Preview {
-     GamesView(games: Faker().array(min: 3, max: 5) { Faker().game() })
+    GamesView().coboDataContainer()
 }

@@ -5,72 +5,68 @@
 //  Created by Hugo Delahousse on 13/07/2024.
 //
 
+import SwiftData
 import SwiftUI
-import Fakery
-
-class GameSettings: ObservableObject {
-    @Published var players: [Player]
-    
-    init(players: [Player]) {
-        self.players = players
-    }
-}
 
 struct GameDetailView: View {
-    @EnvironmentObject var settings: GameSettings
-    @State private var showAddPlayerSheet = false
-    
-    let game: Game
-    var body: some View {
-        NavigationStack {
-            VStack {
-                Text("🙂‍↔️ \(game.loser?.name ?? "??") 🙂‍↔️").font(.largeTitle).padding()
-                
-                List {
-//                    ForEach(game.players) { player in
-//                        HStack(spacing: 10) {
-//                            AvatarView(size: 40, player: player)
-//                            Text(player.name)
-//                            Spacer()
-//                            Text("\(game.playerScore(player: player))")
-//                        }
-//                    }
+    @Environment(\.modelContext) var modelContext
+    var game: Game
 
-                    ForEach(0..<game.rounds.count, id: \.self) { index in
-                        RoundSectionView(round: game.rounds[index], index: index)
+    @Query private var rounds: [Round]
+
+    init(game: Game) {
+        self.game = game
+        let id = game.persistentModelID
+        let predicate = #Predicate<Round> { $0.game.persistentModelID == id }
+        _rounds = Query(filter: predicate, sort: \.index)
+    }
+
+    var body: some View {
+        return NavigationStack {
+            List {
+                Section {
+                    GameGraph(game: game).frame(height: 200)
+                    HStack {
+                        Spacer()
+                        Text("🙂‍↔️ \(game.loser?.name ?? "??") 🙂‍↔️").font(.largeTitle)
+                        Spacer()
+                    }
+                }
+
+                ForEach(game.players) { player in
+                    HStack(spacing: 10) {
+                        AvatarView(size: 40, player: player)
+                        Text(player.name)
+                        Spacer()
+                        Text("\(game.playerScore(player: player))")
+                    }
+                }
+
+                ForEach(rounds) { round in
+                    RoundListSection(round: round)
+                }
+
+                Section {
+                    Button("Add round") {
+                        withAnimation {
+                            let round = Round(
+                                game: game,
+                                scores: [:],
+                                index: rounds.count
+                            )
+                            game.rounds.append(round)
+                        }
                     }
                 }
             }
+
             .navigationTitle("\(game.date.formatted(date: .long, time: .omitted))")
         }
     }
 }
 
-struct RoundSectionView: View {
-    let round: Round
-    let index: Int
-    
-    
-    var body: some View {
-        Section {
-            ForEach(round.scores.sorted { $0.0 < $1.0 }, id: \.key) { (playerName, cards) in
-                HStack(spacing: 10) {
-                    Text(playerName)
-                    Spacer()
-                    ForEach(0..<cards.count, id: \.self) { index in
-                        Text("\(cards[index])").font(.system(size: 50))
-                    }
-                }.frame(minHeight: 50)
-            }
-        } header: {
-            Text("Round \(index + 1)")
-        }
-    }
-}
-
 #Preview {
-    let settings = GameSettings(players: coboFaker.array(min: 20, max: 30, {
-        coboFaker.player()
-    }))
-    return GameDetailView(game: coboFaker.game()).environmentObject(settings)
+    ModelPreview { game in
+        GameDetailView(game: game)
+    }
 }

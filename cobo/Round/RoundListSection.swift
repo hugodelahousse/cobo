@@ -8,11 +8,33 @@
 import SwiftUI
 
 struct RoundListSection: View {
+    var round: Round
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Section {
+            ForEach(round.game.players) { player in
+                NavigationLink {
+                    CardsEditor(cards: round.scores[player.name] ?? [], save: { cards in
+                        round.scores[player.name] = cards
+                    })
+                } label: {
+                    HStack(spacing: 10) {
+                        Text(player.name)
+                        Spacer()
+                        Text("\(round.game.playerScore(player: player, forRound: round))")
+                    }
+                }
+            }
+        } header: {
+            Text("Round \(round.index + 1)")
+        }
     }
 }
 
 #Preview {
-    RoundListSection()
+    ModelPreview {round in
+        List {
+            RoundListSection(round: round).coboDataContainer()
+        }
+    }
 }

@@ -5,8 +5,8 @@
 //  Created by Hugo Delahousse on 18/07/2024.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 public struct ModelPreview<Model: PersistentModel, Content: View>: View {
     var content: (Model) -> Content

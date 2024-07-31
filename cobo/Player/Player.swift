@@ -6,10 +6,24 @@
 //
 
 import Foundation
+import SwiftData
 import SwiftUI
 
-struct Player: Codable, Identifiable, Equatable {
-    var id = UUID()
-    var name: String
-    var picture: URL?
+@Model
+final class Player: CustomStringConvertible {
+    @Attribute(.externalStorage)
+    var imageData: Data?
+
+    @Attribute(.unique) var name: String
+    
+    var games: [Game] = []
+
+    init(name: String, imageData: Data? = nil) {
+        self.name = name
+        self.imageData = imageData
+    }
+    
+    var description: String {
+        return "Player(\"\(name)\")"
+    }    
 }

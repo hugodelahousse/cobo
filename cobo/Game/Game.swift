@@ -6,46 +6,73 @@
 //
 
 import Foundation
-import Fakery
+import SwiftData
 
-struct Game: Codable, Identifiable, Hashable {    
-    var id = UUID()
+@Model
+final class Game {
     var date: Date
-    // var players: [Player]
-    var rounds: [Round]
     
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+    var players: [Player] = []
+
+    var rounds: [Round] = []
+    
+    var sortedRounds: [Round] {
+        rounds.sorted {
+            $0.index < $1.index
+        }
     }
     
+    init(date: Date) {
+        self.date = date
+    }
+
     var highScore: Int {
-        get {
-            guard let loser = self.loser else {
-                return 0
-            }
-            return self.playerScore(player: loser)
+        guard let loser = loser else {
+            return 0
         }
+        return playerScore(player: loser)
     }
     
     var loser: Player? {
-         nil
-//        return players.max { a, b in
-//            self.playerScore(player: a) > self.playerScore(player: b)
-//        }
+        return players.max { a, b in
+            self.playerScore(player: a) < self.playerScore(player: b)
+        }
     }
     
     var winner: Player? {
-        nil
-//        return players.min { a, b in
-//            self.playerScore(player: a) > self.playerScore(player: b)
-//        }
+        return players.min { a, b in
+            self.playerScore(player: a) < self.playerScore(player: b)
+        }
+    }
+    
+    func blackKingValue(player: Player, atRound round: Round) -> Int {
+        guard let previousRound = self.sortedRounds.first(where: { $0.index == round.index - 1 }) else {
+            return 0
+        }
+        return self.playerScore(player: player, atRound: previousRound)
+    }
+    
+
+    func playerScore(player: Player, forRound round: Round) -> Int {
+        return round.playerScore(player: player, blackKingValue: self.blackKingValue(player: player, atRound: round))
+    }
+    
+    func playerScore(player: Player, atRound round: Round) -> Int {
+        var score = 0
+
+        for round in sortedRounds.filter({ $0.index <= round.index }) {
+            let blackKingValue = score
+            score += round.playerScore(player: player, blackKingValue: blackKingValue)
+        }
+        
+        return score
     }
     
     func playerScore(player: Player) -> Int {
-        return rounds.reduce(0) { currentScore, round in
-            return currentScore + (round.scores[player.name]?.reduce(0) { currentRoundScore, card in
-                card.value(blackKingValue: currentScore)
-            } ?? 0)
+        guard let lastRound = sortedRounds.last else {
+            return 0
         }
+        
+        return playerScore(player: player, atRound: lastRound)
     }
 }
