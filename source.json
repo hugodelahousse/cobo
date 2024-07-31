@@ -1,36 +1,25 @@
 {
   "name": "HugoD's source",
-  "subtitle": "A source for all of my apps",
-  "description": "Welcome to my source! Here you'll find all of my apps.",
-  "iconURL": "https://example.com/source_icon.png",
-  "headerURL": "https://example.com/source_header.png",
-  "website": "https://example.com",
-  "patreonURL": "https://patreon.com/mycampaign"
-  "tintColor": "#F54F42",
-  "featuredApps": [
-    "hugodelahousse.cobo",
-  ],
   "apps": [
-     {
-        "name": "Cobo",
-        "bundleIdentifier": "hugodelahousse.cobo",
-        "developerName": "Hugo Delahousse",
-        "subtitle": "Cobo card game score tracker.",
-        "localizedDescription": "This is an awesome app only available on AltStore.",
-        "iconURL": "https://example.com/myapp_icon.png",
-        "tintColor": "#F54F32",
-        "category": "utilities",
-        "screenshots": [],
-        "versions": [{
-          "version": "1.0",
-          "buildVersion": "1",
-          "date": "2024-07-31",
-          "localizedDescription": "First AltStore release!",
-          "downloadURL": "https://myapp.com/myapp-1.0.ipa",
-        }],
-        "appPermissions": {},
-        "patreon": {},
-    },
+    {
+      "name": "Cobo",
+      "bundleIdentifier": "hugodelahousse.cobo",
+      "developerName": "Hugo Delahousse",
+      "localizedDescription": "This is an awesome app only available on AltStore.",
+      "iconURL": "https://example.com/myapp_icon.png",
+      "tintColor": "#F54F32",
+      "category": "utilities",
+      "screenshots": [],
+      "versions": [{
+        "version": "1.0",
+        "buildVersion": "1",
+        "date": "2024-07-31",
+        "localizedDescription": "First AltStore release!",
+        "downloadURL": "https://myapp.com/myapp-1.0.ipa"
+      }],
+      "appPermissions": {},
+      "patreon": {}
+    }
   ],
-  "news": [],
+  "news": []
 }
