@@ -13,7 +13,7 @@
       "versions": [{
         "version": "1.0",
         "buildVersion": "1",
-        "size": "1865248",
+        "size": 1865248,
         "date": "2024-07-31",
         "localizedDescription": "First AltStore release!",
         "downloadURL": "https://github.com/hugodelahousse/cobo/releases/download/v0.0.0-test-1/payload.ipa"
