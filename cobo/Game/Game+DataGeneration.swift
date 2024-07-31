@@ -27,29 +27,5 @@ extension Game {
                 game.rounds.append(round)
             }
         }
-//        
-//        do {
-//            let game = Game(
-//                date: Date(timeIntervalSinceNow: -10)
-//            )
-//            modelContext.insert(game)
-//            game.players = [allPlayers[1], allPlayers[3], allPlayers[4]]
-//            for index in 0..<4 {
-//                let round = Round.generateWithPlayers(using: &random, game: game, index: index)
-//                modelContext.insert(round)
-//            }
-//        }
-//        
-//        do {
-//            let game = Game(
-//                date: Date(timeIntervalSinceNow: -15)
-//            )
-//            modelContext.insert(game)
-//            game.players = allPlayers
-//            for index in 0..<7 {
-//                let round = Round.generateWithPlayers(using: &random, game: game, index: index)
-//                modelContext.insert(round)
-//            }
-//        }
     }
 }

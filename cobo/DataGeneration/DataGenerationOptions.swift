@@ -12,5 +12,5 @@ public class DataGenerationOptions {
     public static let inMemoryPersistence = true
     
     /// When true, generate initial data
-    public static let hasInitialData = true
+    public static let hasInitialData = false
 }
