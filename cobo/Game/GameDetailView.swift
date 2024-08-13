@@ -10,22 +10,19 @@ import SwiftUI
 
 struct GameDetailView: View {
     @Environment(\.modelContext) var modelContext
-    var game: Game
-
-    @Query private var rounds: [Round]
-
-    init(game: Game) {
-        self.game = game
-        let id = game.persistentModelID
-        let predicate = #Predicate<Round> { $0.game.persistentModelID == id }
-        _rounds = Query(filter: predicate, sort: \.index)
-    }
+    var game: Game    
 
     var body: some View {
+        print(Self._printChanges())
+        let scoreboard = game.scoreboard
         return NavigationStack {
             List {
                 Section {
-                    GameGraph(game: game).frame(height: 200)
+                    NavigationLink {
+                        GameScores(game: game)
+                    } label: {
+                        GameGraph(game: game).frame(height: 200)
+                    }
                     HStack {
                         Spacer()
                         Text("🙂‍↔️ \(game.loser?.name ?? "??") 🙂‍↔️").font(.largeTitle)
@@ -33,16 +30,16 @@ struct GameDetailView: View {
                     }
                 }
 
-                ForEach(game.players) { player in
+                ForEach(scoreboard, id: \.player) { (player, score) in
                     HStack(spacing: 10) {
                         AvatarView(size: 40, player: player)
                         Text(player.name)
                         Spacer()
-                        Text("\(game.playerScore(player: player))")
+                        Text("\(score)")
                     }
                 }
 
-                ForEach(rounds) { round in
+                ForEach(game.sortedRounds) { round in
                     RoundListSection(round: round)
                 }
 
@@ -52,7 +49,7 @@ struct GameDetailView: View {
                             let round = Round(
                                 game: game,
                                 scores: [:],
-                                index: rounds.count
+                                index: game.rounds.count
                             )
                             game.rounds.append(round)
                         }

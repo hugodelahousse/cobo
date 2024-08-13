@@ -11,26 +11,32 @@ import SwiftData
 @Model
 final class Round: CustomStringConvertible {
     var game: Game
-
+    var coboCaller: String? = nil
     var index: Int
 
-    var scores: [String: [Card]]
+    private var scores: [String: [Card]]
 
     init(game: Game, scores: [String: [Card]], index: Int) {
         self.game = game
         self.scores = scores
         self.index = index
-    }
-
-    func playerScore(player: Player, blackKingValue: Int) -> Int {
-        let cards = self.scores[player.name] ?? []
-        let score = cards.reduce(0) { score, card in
-            score + card.value(blackKingValue: blackKingValue)
-        }
-
-        return score
+        game.computePlayerScores()
     }
     
+    func setPlayerCards(player: Player, cards: [Card], calledCobo: Bool = false) {
+        scores[player.name] = cards
+        
+        if calledCobo {
+            self.coboCaller = player.name
+        }
+        
+        game.computePlayerScores()
+    }
+    
+    func cards(for player: Player) -> [Card] {
+        return scores[player.name] ?? []
+    }
+
     var description: String {
         "Round(\(scores))"
     }

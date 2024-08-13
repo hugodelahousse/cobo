@@ -9,19 +9,23 @@ import SwiftUI
 
 struct RoundListSection: View {
     var round: Round
-    
+
     var body: some View {
         Section {
             ForEach(round.game.players) { player in
                 NavigationLink {
-                    CardsEditor(cards: round.scores[player.name] ?? [], save: { cards in
-                        round.scores[player.name] = cards
-                    })
+                    CardsEditor(cards: round.cards(for: player), coboCalled: round.coboCaller == player.name, save: { cards, calledCobo in
+                        
+                        round.setPlayerCards(player: player, cards: cards, calledCobo: calledCobo)
+                    }).navigationTitle("\(player.name)")
                 } label: {
                     HStack(spacing: 10) {
                         Text(player.name)
+                        if round.coboCaller == player.name {
+                            Image(systemName: "person.bust")
+                        }
                         Spacer()
-                        Text("\(round.game.playerScore(player: player, forRound: round))")
+                        Text("\(round.game.playerScore(player: player, round: round))")
                     }
                 }
             }
@@ -32,9 +36,11 @@ struct RoundListSection: View {
 }
 
 #Preview {
-    ModelPreview {round in
-        List {
-            RoundListSection(round: round).coboDataContainer()
+    ModelPreview { round in
+        NavigationStack {
+            List {
+                RoundListSection(round: round).coboDataContainer()
+            }
         }
     }
 }

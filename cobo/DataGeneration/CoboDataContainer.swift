@@ -28,7 +28,7 @@ struct GenerateDataViewModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content.onAppear {
-            if DataGenerationOptions.hasInitialData {
+            if DataGenerationOptions.inMemoryPersistence {
                 DataGeneration.generateAllData(modelContext: modelContext)
             }
         }

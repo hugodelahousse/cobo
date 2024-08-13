@@ -7,30 +7,40 @@
 
 import Foundation
 
-enum CardColor: Codable, Equatable, Hashable {
-    case red
-    case black
-}
+struct Card: Identifiable, Codable, Equatable, Hashable, CustomStringConvertible {
+    enum Suite: Codable, Equatable, Hashable, CaseIterable {
+        case heart
+        case diamond
+        case spade
+        case club
 
-enum Card: Codable, Equatable, Hashable, CustomStringConvertible {
-    static let all: [Card] = [.ace, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten, .jack, .queen, .king(color: .black), .king(color: .red)]
+        func isBlack() -> Bool {
+            return self == .spade || self == .club
+        }
+    }
 
-    case ace
-    case two
-    case three
-    case four
-    case five
-    case six
-    case seven
-    case eight
-    case nine
-    case ten
-    case jack
-    case queen
-    case king(color: CardColor)
+    enum Rank: Codable, Equatable, Hashable, CaseIterable {
+        case ace
+        case two
+        case three
+        case four
+        case five
+        case six
+        case seven
+        case eight
+        case nine
+        case ten
+        case jack
+        case queen
+        case king
+    }
+
+    let id = UUID()
+    let rank: Card.Rank
+    let suite: Card.Suite
 
     func value(blackKingValue: Int) -> Int {
-        return switch self {
+        return switch rank {
         case .ace: 1
         case .two: 2
         case .three: 3
@@ -41,25 +51,42 @@ enum Card: Codable, Equatable, Hashable, CustomStringConvertible {
         case .eight: 8
         case .nine: 9
         case .ten, .jack, .queen: 10
-        case .king(.red): 0
-        case .king(.black): blackKingValue
+        case .king: suite.isBlack() ? blackKingValue : 0
         }
     }
 
     var description: String {
+        return "\(rank)(\(suite))"
+    }
+}
+
+extension Card.Rank: CustomStringConvertible {
+    var description: String {
         return switch self {
-        case .ace: "🂡"
-        case .two: "🂢"
-        case .three: "🂣"
-        case .four: "🂤"
-        case .five: "🂥"
-        case .six: "🂦"
-        case .seven: "🂧"
-        case .eight: "🂨"
-        case .nine: "🂩"
-        case .ten, .jack, .queen: "🂪"
-        case .king(.red): "🂾"
-        case .king(.black): "🂮"
+        case .ace: "1"
+        case .two: "2"
+        case .three: "3"
+        case .four: "4"
+        case .five: "5"
+        case .six: "6"
+        case .seven: "7"
+        case .eight: "8"
+        case .nine: "9"
+        case .ten: "10"
+        case .jack: "J"
+        case .queen: "Q"
+        case .king: "K"
+        }
+    }
+}
+
+extension Card.Suite: CustomStringConvertible {
+    var description: String {
+        return switch self {
+        case .heart: "♥️"
+        case .diamond: "♦️"
+        case .spade: "♠️"
+        case .club: "♣️"
         }
     }
 }

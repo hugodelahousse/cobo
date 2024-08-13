@@ -7,44 +7,51 @@
 
 import SwiftUI
 
+extension Card.Suite {
+    var filePrefix: String {
+        return switch self {
+        case .heart: "H"
+        case .spade: "S"
+        case .diamond: "D"
+        case .club: "C"
+        }
+    }
+}
+
 struct CardLabel: View {
     let card: Card
 
+    init(card: Card) {
+        self.card = card
+    }
+
     var body: some View {
-        let text = switch card {
-        case .ace: Image("AH")
-        case .two: Image("2H")
-        case .three: Image("3H")
-        case .four: Image("4H")
-        case .five: Image("5H")
-        case .six: Image("6H")
-        case .seven: Image("7H")
-        case .eight: Image("8H")
-        case .nine: Image("9H")
-        case .ten: Image("10H")
-        case .jack: Image("JH")
-        case .queen: Image("QH")
-        case .king(.red): Image("KH")
-        case .king(.black): Image("KS")
+        let text = switch card.rank {
+        case .ace: Image("A\(card.suite.filePrefix)")
+        case .two: Image("2\(card.suite.filePrefix)")
+        case .three: Image("3\(card.suite.filePrefix)")
+        case .four: Image("4\(card.suite.filePrefix)")
+        case .five: Image("5\(card.suite.filePrefix)")
+        case .six: Image("6\(card.suite.filePrefix)")
+        case .seven: Image("7\(card.suite.filePrefix)")
+        case .eight: Image("8\(card.suite.filePrefix)")
+        case .nine: Image("9\(card.suite.filePrefix)")
+        case .ten: Image("10\(card.suite.filePrefix)")
+        case .jack: Image("J\(card.suite.filePrefix)")
+        case .queen: Image("Q\(card.suite.filePrefix)")
+        case .king: Image("K\(card.suite.filePrefix)")
         }
-        
+
         return text.resizable().aspectRatio(contentMode: .fit)
     }
 }
 
 #Preview("All") {
     ScrollView {
-        ForEach(Card.all, id: \.self) { card in
-            CardLabel(card: card).frame(width: .infinity).padding(30)
+        ForEach(Card.Suite.allCases, id: \.self) { suite in
+            ForEach(Card.Rank.allCases, id: \.self) { rank in
+                CardLabel(card: Card(rank: rank, suite: suite)).padding(30)
+            }
         }
     }
-    
-}
-
-#Preview("Red king") {
-    CardLabel(card: .king(color: .red))
-}
-
-#Preview("Black king") {
-    CardLabel(card: .king(color: .black))
 }

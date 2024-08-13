@@ -25,7 +25,7 @@ struct GameGraph: View {
     var data: [PlayerScoreForRound] {
         game.sortedRounds.flatMap { round in
             game.players.map { player in
-                PlayerScoreForRound(player: player, round: round.index, score: game.playerScore(player: player, forRound: round))
+                PlayerScoreForRound(player: player, round: round.index, score: game.playerScore(player: player, round: round))
             }
         }
     }
@@ -46,11 +46,11 @@ struct GameGraph: View {
     }
 
     var body: some View {
-        return Chart(data) {
+        return Chart(data) { scoreForRound in
             BarMark(
-                x: .value("Round", $0.player.name),
-                y: .value("Score", $0.score)
-            ).foregroundStyle(by: .value("Round", "\($0.round + 1)"))
+                x: .value("Round", scoreForRound.player.name),
+                y: .value("Score", scoreForRound.score)
+            ).foregroundStyle(by: .value("Round", "\(scoreForRound.round + 1)"))
         }
     }
 }

@@ -10,10 +10,12 @@ import SwiftData
 
 extension Player {
     static func generateAll(modelContext: ModelContext) {
-        modelContext.insert(Player(name: "Gougou"))
-        modelContext.insert(Player(name: "Manou"))
-        modelContext.insert(Player(name: "Mathou"))
-        modelContext.insert(Player(name: "Kekou"))
-        modelContext.insert(Player(name: "Roro"))
+        let names = ["Hugo", "Sarah", "Manne", "Kellian", "Mathieu", "Rodrigue", "Claire"]
+        for name in names {
+            let existingPlayer = try? modelContext.fetch(.init(predicate: #Predicate<Player> {$0.name == name})).first
+            if existingPlayer == nil {
+                modelContext.insert(Player(name: name))
+            }
+        }
     }
 }

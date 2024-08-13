@@ -35,6 +35,8 @@
 		9A583ECB2C490B7C006D3FE5 /* ModelPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A583ECA2C490B7C006D3FE5 /* ModelPreview.swift */; };
 		9A6916392C4941CE00D5861F /* Round+DataGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6916382C4941CE00D5861F /* Round+DataGeneration.swift */; };
 		9A69163B2C4947F300D5861F /* CardLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69163A2C4947F300D5861F /* CardLabel.swift */; };
+		9A9BDC2F2C63741C003A26DB /* GameScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9BDC2E2C63741C003A26DB /* GameScores.swift */; };
+		9A9E5AB72C62142A000EC231 /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E5AB62C62142A000EC231 /* CardStack.swift */; };
 		9AB074C22C5A3BAA000D0D06 /* GameGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB074C12C5A3BAA000D0D06 /* GameGraph.swift */; };
 		9AB074C42C5A44F7000D0D06 /* PlayerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB074C32C5A44F7000D0D06 /* PlayerList.swift */; };
 		9ACA06202C4A9FE100614A49 /* RoundListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACA061F2C4A9FE100614A49 /* RoundListSection.swift */; };
@@ -92,6 +94,8 @@
 		9A583ECA2C490B7C006D3FE5 /* ModelPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPreview.swift; sourceTree = "<group>"; };
 		9A6916382C4941CE00D5861F /* Round+DataGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Round+DataGeneration.swift"; sourceTree = "<group>"; };
 		9A69163A2C4947F300D5861F /* CardLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLabel.swift; sourceTree = "<group>"; };
+		9A9BDC2E2C63741C003A26DB /* GameScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScores.swift; sourceTree = "<group>"; };
+		9A9E5AB62C62142A000EC231 /* CardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
 		9AB074C12C5A3BAA000D0D06 /* GameGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGraph.swift; sourceTree = "<group>"; };
 		9AB074C32C5A44F7000D0D06 /* PlayerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerList.swift; sourceTree = "<group>"; };
 		9ACA061F2C4A9FE100614A49 /* RoundListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundListSection.swift; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 				9A271DD52C426270006D172A /* Card.swift */,
 				9A69163A2C4947F300D5861F /* CardLabel.swift */,
 				9AD29C232C49645E00A2062B /* CardsEditor.swift */,
+				9A9E5AB62C62142A000EC231 /* CardStack.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 				9A271DEA2C42D305006D172A /* GameDetailView.swift */,
 				9AD29C252C4A5A9A00A2062B /* GameEditor.swift */,
 				9AB074C12C5A3BAA000D0D06 /* GameGraph.swift */,
+				9A9BDC2E2C63741C003A26DB /* GameScores.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -422,6 +428,8 @@
 				9A271DD02C426126006D172A /* Game.swift in Sources */,
 				9AD29C262C4A5A9A00A2062B /* GameEditor.swift in Sources */,
 				9AB074C22C5A3BAA000D0D06 /* GameGraph.swift in Sources */,
+				9A9E5AB72C62142A000EC231 /* CardStack.swift in Sources */,
+				9A9BDC2F2C63741C003A26DB /* GameScores.swift in Sources */,
 				9A271DD42C426209006D172A /* Round.swift in Sources */,
 				9A271DDE2C426D1D006D172A /* String+initials.swift in Sources */,
 				9AB074C42C5A44F7000D0D06 /* PlayerList.swift in Sources */,
@@ -613,10 +621,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hugodelahousse.cobo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3";
 			};
 			name = Debug;
 		};
@@ -650,10 +659,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hugodelahousse.cobo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3";
 			};
 			name = Release;
 		};

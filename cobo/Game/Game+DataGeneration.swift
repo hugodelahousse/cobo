@@ -19,13 +19,15 @@ extension Game {
                 date: Date(timeIntervalSinceNow: -5)
             )
             modelContext.insert(game)
-            game.players = [allPlayers[0], allPlayers[1], allPlayers[2]]
+            game.players = [allPlayers[0], allPlayers[1], allPlayers[2], allPlayers[4]]
             
             for index in 0..<3 {
                 let round = Round.generateWithPlayers(using: &random, game: game, index: index)
                 modelContext.insert(round)
                 game.rounds.append(round)
             }
+            
+            game.computePlayerScores()
         }
     }
 }

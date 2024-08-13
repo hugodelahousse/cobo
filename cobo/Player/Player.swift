@@ -10,7 +10,7 @@ import SwiftData
 import SwiftUI
 
 @Model
-final class Player: CustomStringConvertible {
+final class Player: Hashable, CustomStringConvertible {
     @Attribute(.externalStorage)
     var imageData: Data?
 

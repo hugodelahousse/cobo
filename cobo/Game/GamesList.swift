@@ -8,15 +8,17 @@
 import SwiftData
 import SwiftUI
 
-enum Destination {
-    case createGame
-}
-
 struct GamesView: View {
     @Environment(\.modelContext) var modelContext
     @State private var path: [String] = []
     @Query(sort: [SortDescriptor(\Game.date, order: .reverse)]) var games: [Game]
 
+    func deleteGame(_ game: Game) {
+        withAnimation {
+            modelContext.delete(game)
+        }
+    }
+    
     var body: some View {
         NavigationStack {
             List {
@@ -26,12 +28,20 @@ struct GamesView: View {
                             GameDetailView(game: game)
                         } label: {
                             GameCardView(game: game)
-                        }.swipeActions(edge: .trailing) {
+                        }
+                        #if os(iOS)
+                        .swipeActions(edge: .trailing) {
                             Button("Delete", systemImage: "trash", role: .destructive) {
-                                modelContext.delete(game)
-                                
+                                deleteGame(game)
                             }
                         }
+                        #else
+                        .contextMenu {
+                            Button("Delete game") {
+                                deleteGame(game)
+                            }
+                        }
+                        #endif
                     } header: {
                         Text("\(game.date.formatted(date: .long, time: .omitted))")
                     }
@@ -45,7 +55,11 @@ struct GamesView: View {
                     }
                 }
             }
-            .navigationTitle("Games")
+            .navigationTitle("Games").onAppear {
+                for game in games {
+                    game.computePlayerScores()
+                }
+            }
         }
     }
 }
